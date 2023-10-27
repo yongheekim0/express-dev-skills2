@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <nav>
+                <a href="/skills">&lt;Back</a>
+                <a href="/skills/<%= skill.id %>/edit">Edit</a>
+            </nav>
+
+            <hgroup>
+                <h2><%= skill.name %></h2>
+                <h3>Detail: <%= skill.detail %></h3>
+                <h3>Comment: <%= skill.comment %></h3>
+            </hgroup>
+
+            <form method="POST" action="/skills/<%= skill.id %>?_method=DELETE">
+                <button>Delete</button>
+            </form>
+        </main>
+    </body>
+</html>

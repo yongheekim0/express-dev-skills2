@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <title>Edit</title>
+    </head>
+    <body>
+        <main>
+            <nav><a href="/skills/<%= skill.id %>">&lt;back</a></nav>
+            <section>
+                <form
+                    action="/skills/<%= skill.id %>?_method=PATCH"
+                    method="POST"
+                >
+                    <label>
+                        <h3>Skill Name</h3>
+                        <input
+                            type="text"
+                            name="name"
+                            value="<%= skill.name %>"
+                    /></label>
+                    <br />
+                    <label>
+                        <h3>Detail</h3>
+                        <textarea name="detail" cols="30" rows="5">
+                          <%= skill.detail %>
+                        </textarea>
+                    </label>
+                    <br />
+                    <label>
+                        <h3>Comment</h3>
+                        <textarea name="comment" cols="30" rows="5">
+                          <%= skill.comment %>
+                        </textarea>
+                    </label>
+                    <br />
+                    <button><strong>Save</strong></button>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
